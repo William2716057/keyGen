@@ -13,7 +13,7 @@ def keyGen():
             print(key)
 keyGen()
 
-#convert single_key into binary format
+#convert single_key into binary format then shift
 input_key = single_key.decode()
 def string_to_binary(input_key):
     binary_representation = ''.join(format(ord(char), '08b') for char in input_key)
@@ -21,3 +21,7 @@ def string_to_binary(input_key):
 
 binary_output = string_to_binary(input_key)
 print(binary_output)
+
+shifted = binary_output[3:] + '000' #edit here
+print("single example key shifted: ", shifted)
+
